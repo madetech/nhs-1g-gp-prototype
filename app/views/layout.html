@@ -20,15 +20,38 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-  {{ header({
-    "service": {
-        "name": "Prototype kit",
-        "href": "/"
+{#    {% from 'header/macro.njk' import header %}#}
+    {{ header({
+    "showNav": "true",
+    "showSearch": "true",
+    "classes": "nhsuk-header--white",
+    "organisation": {
+      "name": "Kings Valley Surgery"
+    },
+    "primaryLinks": [
+      {
+        "url"  : "/home",
+        "label" : "Home"
       },
-      "showNav": "false",
-      "showSearch": "false"
-    })
-  }}
+      {
+        'url' : '/services',
+        'label' : 'Our Services'
+      },
+      {
+        'url'  : '/otherwaystogethelp',
+        'label' : 'Other Ways To Get Help'
+      },
+      {
+        'url'  : '#',
+        'label' : 'About Us'
+      },
+      {
+        'url' : '#',
+        'label' : 'Contact Details'
+      }
+    ]
+  })
+}}
 {% endblock %}
 
 <!-- Edit the footer -->

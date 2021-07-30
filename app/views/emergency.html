@@ -1,0 +1,56 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Check it's not an emergency
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1>Check it's not an emergency</h1>
+        {{ careCard({
+  "type": "urgent",
+  "heading": "Call 999 now if you have:",
+  "HTML": "
+  <ul>
+    <li><b>signs of a heart attack - </b>pain like a very tight band, heavy weight or squeezing in the centre of your chest</li>
+    <li><b>signs of a stroke - </b>face dropping on one side, can't hold both arms up, difficulty speaking</li>
+    <li><b>severe breathing difficulty - </b>not being able to get words out, choking or gasping</li>
+    <li><b>heavy bleeding - </b>that won't stop</li>
+    <li><b>severe injuries - </b>or deep cuts after a serious accident</li>
+    <li><b>seizure (fit) - </b>someone is shaking or jerking because of a fit, or is unconscious (can't be woken up)</li>
+    <li><b>sudden, rapid swelling - </b>of the eyes, lips, mouth, throat or tongue</li>
+  </ul>
+  "
+}) }}
+<h3>Deaf people can use 18000 to contact 999 using text relay.</h3>
+        <form action="/bookingemailphone">
+            {{ button({
+  "text": "I have none of these"
+}) }}
+
+        </form>
+
+    </div>  
+
+  </div>
+{% endblock %}

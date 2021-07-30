@@ -12,82 +12,48 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  NHS.UK prototype kit
+    GP Front Door Prototype
 {% endblock %}
 
-<!-- For adding a breadcrumb -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}
-{% endblock %}
-
-<!-- For adding a back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
+{% block header %}
+    {#    {% from 'header/macro.njk' import header %}#}
+    {{ header({
+    "showNav": "true",
+    "showSearch": "false",
+    "classes": "nhsuk-header--white",
+    "organisation": {
+      "name": "Gloucestershire Clinical Commissioning Group"
+    },
+    "primaryLinks": [
+    ]
+  })
+            }}
 {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
+            <!-- Change the page title here -->
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+            <!-- Add your content here -->
+            <h3>GP front door project, July 2021</h3>
+            <h1>GP practice website prototype</h1>
+            <p>This is an HTML prototype created using the NHS Design System.<br>
+            It follows research with patients and GP practices.<br><br>
+            This is an initial prototype only and is not a fully functioning website. Many links do not work
+                and placeholder content is shown.</p>
 
-        <p class="nhsuk-lede-text">
-            ONE GLOUCESTERSHIRE GP PROJECT
-        </p>
-
-        <p class="nhsuk-lede-text">
-            This kit lets you rapidly create HTML prototypes of NHS services.
-        </p>
-
-      <hr>
-
-      <h2>
-        About this page
-      </h2>
-
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
-      <hr>
-
-      <h2>
-        Get started
-      </h2>
-
-      <p>Get started by using the:</p>
-
-      <ul>
-        <li>
-          <a href="/docs/how-tos">how to guides</a>
-        </li>
-        <li>
-          <a href="/docs/page-templates">page templates</a>
-        </li>
-        <li>
-          code snippets for styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
-        </li>
-      </ul>
-
-      <!-- End of content -->
-
+            {{ warningCallout({
+              "heading": "Please wait",
+              "HTML": "<p>If you are taking part in research, please wait on this page until the researcher asks you to continue.</p>"
+            }) }}
+            {{ actionLink({
+                  "text": "View prototype",
+                  "href": "/home"
+            }) }}
     </div>
-  </div>
 {% endblock %}
+

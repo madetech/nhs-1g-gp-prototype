@@ -1,0 +1,149 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+    Our services
+{% endblock %}
+
+{% block pageScripts %}
+    <script src="/js/step-by-step-nav.js"></script>
+    <script type="text/javascript">
+      var $element = $('#step-by-step-navigation')
+      var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+      stepByStepNavigation.start($element)
+    </script>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+    <div class="nhs-grid-row">
+        <div class="nhs-grid-column-two-thirds">
+
+            <h1>
+                How to book an appointment
+            </h1>
+
+            <p>
+                You should book an appointment if you have an illness that won't go away.
+            </p>
+
+            {{ insetText({
+              "HTML": "<p>Before asking for an appointment, it may be worth checking <a href=\"#\" title=\"online advice\">online advice</a> or <a href=\"#\" title=\"visiting a pharmacist\">visiting a pharmacist</a>.</p>"
+            }) }}
+
+            <h2>Book online if you can</h2>
+            <p>If possible we prefer you to request an appointment online.
+                This helps us prioritise patients who need the most help more efficiently.
+                You'll need to have registered your email address or mobile number with us before
+                you can use this service. <a href="#">Register now.</a></p>
+            <p>Online booking follows a 3 step process.</p>
+            <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active"
+                 data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all"
+                 data-hide-all-text="Hide all">
+                <ol class="app-step-nav__steps">
+                    <li class="app-step-nav__step js-step" id="check-youre-allowed-to-drive">
+                        <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 1
+                  </span>
+                </span>
+              </span>
+
+                                <span class="js-step-title">
+                Request an appointment online
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel js-panel js-hidden"
+                             id="step-panel-check-youre-allowed-to-drive-1">
+                            <p class="app-step-nav__paragraph">You'll need to provide some basic information about your
+                                medical issue
+                                such as symptoms you are experiencing and how long you have had them.</p>
+                        </div>
+
+                    </li>
+
+                    <li class="app-step-nav__step js-step" id="get-a-provisional-licence">
+                        <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 2
+                  </span>
+                </span>
+              </span>
+
+                                <span class="js-step-title">
+                Initial triage
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel js-panel js-hidden" id="step-panel-get-a-provisional-licence-2">
+                            <p class="app-step-nav__paragraph">A Care Navigator at the practice will review your request
+                                and assign
+                                you the most appropriate type of appointment. This could be a face-to-face consultation
+                                with a GP, a
+                                phone consultation or a consultation with a nurse or Advanced Nurse Practitioner.
+                                Occasioanlly they may refer you to a different resource or external service if this is
+                                more appropriate.</p>
+                        </div>
+
+                    </li>
+
+                    <li class="app-step-nav__step js-step" id="driving-lessons-and-practice">
+                        <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden">Step</span> 3
+                  </span>
+                </span>
+              </span>
+
+                                <span class="js-step-title">
+                Choose your appointment time
+              </span>
+                            </h2>
+                        </div>
+
+                        <div class="app-step-nav__panel js-panel js-hidden"
+                             id="step-panel-driving-lessons-and-practice-3">
+                            <p class="app-step-nav__paragraph">We will send you a link via email or text message. This
+                                will
+                                allow you to view the appointment dates and times. If appropriate you will be able to
+                                choose whether
+                                you prefer a phone call or to come in to see us face-to-face. at this stage we may also
+                                ask
+                                you some additional questions or ask you to upload a photo if that is appropriate.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            {{ actionLink({
+                  "text": "Start now",
+                  "href": "/emergency"
+            }) }}
+            <h2>Call us</h2>
+            <p>You can call us if you prefer. We are open <b>8:30am-5:00pm Monday-Friday.</b></p>
+            {{ insetText({
+              "HTML": "<p>When you call us a Care Navigator will ask you for some details about your medical issue.
+              This will help them assign you the most appropriate type of appointment.</p>"
+            }) }}
+            <h3>01242 283928</h3>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,130 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Our services
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+    <h2>Our Services</h2>
+    <h3>Getting medical help</h3>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "/booking",
+          "clickable": "true",
+          "heading": "Book an appointment",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "Find out how to book an appointment online or by phone."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Renew a presription",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "If your prescription is  already set up you can ask us to renew it online."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Access your medical record",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "How to access your medical record online using the NHS app so you can view your test results etc."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Coronavirus vaccine",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "How to get your vaccine. What to expect. Advice for vunerable patients."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Mental health",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "find out about our mental health services, including referral to counselling and our Social Prescriber."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Sick notes and fit notes",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "If a GP has signed you off sick for a period of time and you need longer to recover, you can apply for this online."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Travel vaccinations",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "Check what vaccinations you need. How to book."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Diabetes clinic",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "Find out about out Diabetes clinic. Times and availability. How to book."
+        }) }}
+    </div>
+    <h3>Admin tasks</h3>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Tell us you have changed your address",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "Update your address details quickly online."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Change your registered email or mobile number",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "Update your resitered contact details online, or add more."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Medical reports",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "How to get a GP medical report if you need one for your job. How much it costs."
+        }) }}
+    </div>
+    <div class="nhsuk-grid-row">
+        {{ card({
+          "href": "#",
+          "clickable": "true",
+          "heading": "Another admin task",
+          "headingClasses": "nhsuk-heading-s",
+          "description": "An overview of what you can expect to learn about this admin task if you click the link."
+        }) }}
+    </div>
+
+
+{% endblock %}
