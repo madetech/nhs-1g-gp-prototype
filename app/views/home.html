@@ -94,6 +94,14 @@
                 {{ card({
           "href": "#",
           "clickable": "true",
+          "heading": "Access your medical record",
+          "headingClasses": "nhsuk-heading-xs"
+        }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+                {{ card({
+          "href": "#",
+          "clickable": "true",
           "heading": "Coronavirus vaccines",
           "headingClasses": "nhsuk-heading-xs"
         }) }}
@@ -103,14 +111,6 @@
           "href": "#",
           "clickable": "true",
           "heading": "Notify change of address",
-          "headingClasses": "nhsuk-heading-xs"
-        }) }}
-            </li>
-            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-                {{ card({
-          "href": "#",
-          "clickable": "true",
-          "heading": "Travel vaccinations",
           "headingClasses": "nhsuk-heading-xs"
         }) }}
             </li>
@@ -136,11 +136,11 @@
         </p>
         <hr>
         <h3>How to find us</h3>
-        <ul class="nhsuk-grid-row">
-            <figure class="nhsuk-image nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-grid-row">
+            <div class=" nhsuk-grid-column-two-thirds">
                 <img class="nhsuk-image__img" src="/images/map.png" alt="Map of the surgery">
 
-            </figure>
+            </div>
             <p class="nhsuk-grid-column-one-third">
             <br><b>Contact details</b><br>
                 Kings Valley Surgery<br>
@@ -153,7 +153,8 @@
                 <a href="/booking">How to book an appointment</a><br>
             </p>
 
-        </ul>
+        </div>
+        <hr>
         <ul class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-half">
                 <h4>Just moved into the area? </h4>
@@ -170,6 +171,7 @@
                 }) }}
             </div>
         </ul>
+        <hr>
         <h3>Practice news</h3>
 
         <ul class="nhsuk-grid-row">
